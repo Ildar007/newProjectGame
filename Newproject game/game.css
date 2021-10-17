@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+  }
+  
+  .square {
+    position: relative;
+    height: 24px;
+    width: 40px;
+    background-color: #1d1d1d;
+    margin: 10px 5px;
+    transition: background-color 2s ease-in;
+  }
+  
+  .square::before,
+  .square::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    height: inherit;
+    width: inherit;
+    background: inherit;
+    box-shadow: inherit; 
+  }
+  
+  .square::before {
+    transform: rotate(60deg);
+  }
+  
+  .square::after {
+    transform: rotate(-60deg);
+  }
+  
+  .square:hover,
+  .square:hover::after,
+  .square:hover::before {
+    transition-duration: 0s;
+  }
+  
